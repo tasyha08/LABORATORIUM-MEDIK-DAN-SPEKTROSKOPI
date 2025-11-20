@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Laboratorium Fisika Medik & Spektroskopi - Universitas Hasanuddin</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
   <style>
-    /* === Root Variables === */
     :root {
       --pink: #f8c6d9;
       --pink-dark: #c25a84;
       --pink-light: #ffe6ef;
       --text-dark: #333;
-      --white: #fff;
     }
 
     * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
       scroll-behavior: smooth;
-      font-family: "Poppins", sans-serif;
     }
 
     body {
@@ -27,44 +30,29 @@
       color: var(--text-dark);
     }
 
-    /* === Navbar === */
-    header {
-      background-color: var(--pink-dark);
-      color: var(--white);
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
+    /* Navbar */
+    .navbar {
+      background-color: var(--pink-dark) !important;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
-    .logo {
+    .navbar-brand {
       font-weight: 700;
-      font-size: 1.1rem;
       letter-spacing: 1px;
+      color: white !important;
     }
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    nav a {
-      color: var(--white);
-      text-decoration: none;
+    .nav-link {
+      color: white !important;
       font-weight: 600;
       transition: 0.3s;
     }
 
-    nav a:hover {
-      color: var(--pink-light);
+    .nav-link:hover {
+      color: var(--pink-light) !important;
     }
 
-    /* === Hero === */
+    /* Hero Section */
     .hero {
       background: linear-gradient(rgba(194,90,132,0.6), rgba(248,198,217,0.6)),
         url("https://images.unsplash.com/photo-1581091012184-5c49a1d9d0a0?auto=format&fit=crop&w=1500&q=80");
@@ -87,264 +75,342 @@
       margin-bottom: 1.5rem;
     }
 
-    .btn {
-      background: var(--white);
+    .btn-custom {
+      background: white;
       color: var(--pink-dark);
       padding: 0.8rem 1.6rem;
       border-radius: 25px;
-      text-decoration: none;
       font-weight: bold;
       transition: all 0.3s ease;
       box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      text-decoration: none;
+      display: inline-block;
     }
 
-    .btn:hover {
+    .btn-custom:hover {
       background: var(--pink);
       color: var(--text-dark);
       transform: translateY(-2px);
     }
 
-    /* === Section Base === */
+    /* Sections */
     section {
-      padding: 4rem 2rem;
+      padding: 4rem 0;
+      animation: fadeIn 1s ease;
+    }
+
+    .section-title {
+      color: var(--pink-dark);
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
       text-align: center;
     }
 
-    section h2 {
-      color: var(--pink-dark);
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    section p {
-      max-width: 800px;
-      margin: auto;
-      line-height: 1.6;
-    }
-
-    /* === Info Cards === */
-    .info-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .info-card {
-      background: var(--white);
-      padding: 1.5rem;
+    /* Cards */
+    .card {
+      border: none;
       border-radius: 10px;
       box-shadow: 0 3px 8px rgba(0,0,0,0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 100%;
     }
 
-    .info-card:hover {
+    .card:hover {
       transform: translateY(-5px);
       box-shadow: 0 6px 12px rgba(0,0,0,0.15);
     }
 
-    /* === Anggota === */
-    .anggota-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .anggota-card {
-      background: var(--white);
-      border-radius: 10px;
-      padding: 1.5rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      transition: all 0.3s;
-    }
-
-    .anggota-card:hover {
-      transform: scale(1.05);
-    }
-
-    .anggota-card img {
-      border-radius: 50%;
-      width: 130px;
-      height: 130px;
-      object-fit: cover;
-    }
-
-    .anggota-card h3 {
-      margin-top: 1rem;
+    .card-title {
       color: var(--pink-dark);
+      font-weight: 600;
     }
 
-    .anggota-card p {
-      font-size: 0.9rem;
-      color: #555;
-    }
-
-    /* === Galeri === */
-    .galeri-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-
-    .galeri-grid img {
-      width: 100%;
+    /* Maps */
+    .map-container {
       border-radius: 10px;
-      transition: transform 0.4s ease;
+      overflow: hidden;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
     }
 
-    .galeri-grid img:hover {
-      transform: scale(1.05);
-    }
-
-    /* === Kontak === */
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      max-width: 400px;
-      margin: 2rem auto;
-    }
-
-    input, textarea {
-      padding: 0.8rem;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-family: inherit;
-    }
-
-    form button {
-      background-color: var(--pink-dark);
-      color: white;
-      border: none;
-      padding: 0.8rem;
-      border-radius: 25px;
-      font-weight: bold;
-      transition: 0.3s;
-      cursor: pointer;
-    }
-
-    form button:hover {
-      background-color: var(--pink);
-      color: var(--text-dark);
-    }
-
-    /* === Footer === */
+    /* Footer */
     footer {
       background-color: var(--pink-dark);
-      color: var(--white);
+      color: white;
       text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
+      padding: 1.5rem;
     }
 
-    /* === Animations === */
+    /* Animations */
     @keyframes fadeIn {
       from {opacity: 0; transform: translateY(20px);}
       to {opacity: 1; transform: translateY(0);}
     }
 
-    section {
-      animation: fadeIn 1s ease;
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="logo">Lab Fisika Medik & Spektroskopi</div>
-    <nav>
-      <ul>
-        <li><a href="#beranda">Beranda</a></li>
-        <li><a href="#informasi">Informasi</a></li>
-        <li><a href="#anggota">Anggota</a></li>
-        <li><a href="#galeri">Galeri</a></li>
-        <li><a href="#kontak">Kontak</a></li>
-      </ul>
-    </nav>
-  </header>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="Logo-Resmi-Unhas-1.png" alt="Logo UNHAS" height="40" class="me-2">
+        <span>Lab Fisika Medik & Spektroskopi</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+          <li class="nav-item"><a class="nav-link" href="anggota.html">Anggota</a></li>
+          <li class="nav-item"><a class="nav-link" href="galeri.html">Galeri</a></li>
+          <li class="nav-item"><a class="nav-link" href="kontak.html">Kontak</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
+  <!-- Hero Section -->
   <section id="beranda" class="hero">
-    <h1>Laboratorium Fisika Medik & Spektroskopi</h1>
-    <p>Departemen Fisika, Universitas Hasanuddin</p>
-    <a href="#informasi" class="btn">Jelajahi Lebih Lanjut</a>
+    <div class="container">
+      <h1>Laboratorium Fisika Medik & Spektroskopi</h1>
+      <p>Departemen Fisika, Universitas Hasanuddin</p>
+      <a href="#profil" class="btn-custom">Jelajahi Lebih Lanjut</a>
+    </div>
   </section>
 
-  <section id="informasi">
-    <h2>Informasi Laboratorium</h2>
-    <p>
-      Laboratorium ini berfokus pada penerapan fisika dalam dunia medis serta pengembangan teknologi spektroskopi modern.
-      Kami mendorong riset inovatif dan kolaborasi lintas disiplin untuk kemajuan ilmu pengetahuan dan kesehatan.
-    </p>
-
-    <div class="info-grid">
-      <div class="info-card">
-        <h3>Bidang Penelitian</h3>
-        <p>Spektroskopi optik, biofisika medis, dan instrumentasi berbasis cahaya.</p>
-      </div>
-      <div class="info-card">
-        <h3>Fasilitas</h3>
-        <p>Laboratorium spektroskopi UV-Vis, FTIR, dan sistem analisis komputasi ilmiah.</p>
-      </div>
-      <div class="info-card">
-        <h3>Kolaborasi</h3>
-        <p>Bekerjasama dengan lembaga penelitian dan rumah sakit di tingkat nasional dan internasional.</p>
+  <!-- Profil Section -->
+  <section id="profil" class="bg-white">
+    <div class="container">
+      <h2 class="section-title">Profil Laboratorium</h2>
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6">
+          <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80" alt="Laboratorium Fisika Medik" class="img-fluid rounded shadow">
+        </div>
+        <div class="col-lg-6">
+          <p class="lead">
+            Laboratorium Fisika Medik dan Spektroskopi merupakan salah satu laboratorium unggulan di Departemen Fisika FMIPA Universitas Hasanuddin yang berfokus pada penerapan prinsip-prinsip fisika dalam bidang kesehatan, radiologi, serta analisis struktur materi. Laboratorium ini mendukung kegiatan pendidikan, penelitian, dan pengabdian masyarakat dalam lingkup fisika medik dan teknik spektroskopi modern.
+          </p>
+          <p>
+            Dengan perpaduan antara kajian teoretis dan eksperimen, laboratorium ini menjadi wahana bagi mahasiswa untuk memahami interaksi radiasi dengan materi biologis, teknik pencitraan medis, keselamatan radiasi, serta metode spektroskopi untuk karakterisasi material.
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="anggota">
-    <h2>Anggota Laboratorium</h2>
-    <div class="anggota-grid">
-      <div class="anggota-card">
-        <img src="https://via.placeholder.com/150" alt="Prof.Dr.Syamsir Dewang M.Sc">
-        <h3>Prof.Dr.Syamsir Dewang M.Sci</h3>
-        <p>Kepala Laboratorium</p>
-      </div>
-      <div class="anggota-card">
-        <img src="https://via.placeholder.com/150" alt="TASYHA SRI DESANA ">
-        <h3>Andi Pratama</h3>
-        <p>Peneliti Spektroskopi</p>
-      </div>
-      <div class="anggota-card">
-        <img src="https://via.placeholder.com/150" alt="algiza idham
-          dea aulia masiku, fajriana aris, muh aryansyah raizqullah, SERLI">
-        <h3>Nurul Fitriani</h3>
-        <p>Asisten Peneliti</p>
+  <!-- Visi Misi Section -->
+  <section id="visi-misi">
+    <div class="container">
+      <h2 class="section-title">Visi & Misi</h2>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="card p-4">
+            <h4 class="card-title"><i class="bi bi-eye"></i> Visi</h4>
+            <p>Menjadi laboratorium unggul dan pusat rujukan dalam penelitian serta pengembangan ilmu Fisika Medik dan Spektroskopi di Indonesia Timur, yang berkontribusi pada kemajuan sains dan peningkatan kualitas layanan kesehatan berbasis teknologi fisika.</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card p-4">
+            <h4 class="card-title"><i class="bi bi-flag"></i> Misi</h4>
+            <ol class="mb-0">
+              <li>Menyelenggarakan pendidikan dan praktikum yang berkualitas dalam bidang fisika medik dan spektroskopi.</li>
+              <li>Mengembangkan penelitian inovatif yang mendukung pemanfaatan radiasi secara aman dan efektif dalam dunia medis.</li>
+              <li>Mendorong pemanfaatan teknologi spektroskopi untuk analisis material, lingkungan, dan biomolekuler.</li>
+              <li>Menjalin kemitraan dengan rumah sakit, lembaga riset, dan instansi terkait dalam penerapan ilmu fisika di masyarakat.</li>
+              <li>Menghasilkan lulusan yang kompeten, berintegritas, dan mampu bersaing di bidang kesehatan, industri, maupun akademik.</li>
+            </ol>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="galeri">
-    <h2>Galeri Laboratorium</h2>
-    <div class="galeri-grid">
-      <img src="https://images.unsplash.com/photo-1581092795360-fd1ca03d7d5b?auto=format&fit=crop&w=600&q=80" alt="Lab 1">
-      <img src="https://images.unsplash.com/photo-1581091215360-59ab6b6b26a1?auto=format&fit=crop&w=600&q=80" alt="Lab 2">
-      <img src="https://images.unsplash.com/photo-1602080873537-028b06cc38f0?auto=format&fit=crop&w=600&q=80" alt="Lab 3">
+  <!-- Bidang Kajian Section -->
+  <section id="bidang" class="bg-white">
+    <div class="container">
+      <h2 class="section-title">Bidang Kajian Utama</h2>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="card p-4">
+            <h4 class="card-title"><i class="bi bi-heart-pulse"></i> Fisika Medik</h4>
+            <p>Mengkaji penerapan fisika dalam dunia kesehatan dan radiologi, meliputi:</p>
+            <ul>
+              <li>Interaksi radiasi dengan jaringan biologis</li>
+              <li>Radiologi diagnostik (CT-Scan, X-ray, fluoroskopi, mammografi)</li>
+              <li>Radioterapi dan proteksi radiasi</li>
+              <li>Pengukuran dosis dan dosimetri</li>
+              <li>Alat-alat deteksi radiasi (ion chamber, GM counter, TLD, dsb.)</li>
+              <li>Quality control (QC) untuk peralatan medis</li>
+              <li>Prinsip pencitraan dan analisis citra medis</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card p-4">
+            <h4 class="card-title"><i class="bi bi-rainbow"></i> Spektroskopi</h4>
+            <p>Mempelajari karakteristik materi melalui interaksi gelombang elektromagnetik dengan atom atau molekul. Kajian mencakup:</p>
+            <ul>
+              <li>Spektroskopi UV-Vis</li>
+              <li>Spektroskopi IR (Infrared)</li>
+              <li>Spektroskopi Raman</li>
+              <li>Spektroskopi fluoresensi</li>
+              <li>Analisis material dan biomolekul</li>
+              <li>Identifikasi zat kimia, mineral, dan senyawa organik</li>
+              <li>Kajian struktur molekul dan sifat optik material</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section id="kontak">
-    <h2>Kontak Kami</h2>
-    <p>Hubungi kami untuk kolaborasi penelitian atau informasi lebih lanjut.</p>
-    <form id="contactForm">
-      <input type="text" placeholder="TASYHA SRI DESIANA" required>
-      <input type="email" placeholder="tasyhasridesiana12@gmail.com" required>
-      <textarea rows="5" placeholder="Pesan Anda" required></textarea>
-      <button type="submit">Kirim Pesan</button>
-    </form>
+  <!-- Fasilitas Section -->
+  <section id="fasilitas">
+    <div class="container">
+      <h2 class="section-title">Fasilitas Laboratorium</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card p-3 text-center">
+            <i class="bi bi-radioactive fs-1 mb-3" style="color: var(--pink-dark);"></i>
+            <h5 class="card-title">Alat Ukur Radiasi</h5>
+            <p class="card-text">Alat ukur radiasi (Ion Chamber, Survey Meter, GM Counter), Dosimeter (TLD, film badge, pocket dosimeter), Sumber radiasi aman untuk praktikum (check source Cs-137, Co-60)</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card p-3 text-center">
+            <i class="bi bi-reception-4 fs-1 mb-3" style="color: var(--pink-dark);"></i>
+            <h5 class="card-title">Spektroskopi</h5>
+            <p class="card-text">Spektrofotometer UV-Vis, Spektrometer Raman, Perangkat FTIR</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card p-3 text-center">
+            <i class="bi bi-laptop fs-1 mb-3" style="color: var(--pink-dark);"></i>
+            <h5 class="card-title">Komputasi & Ruangan</h5>
+            <p class="card-text">Sistem komputer untuk simulasi dan pengolahan data (ImageJ, MATLAB, dsb.), Ruang praktikum, ruang riset, dan fasilitas pendukung lainnya</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
+  <!-- Kegiatan Section -->
+  <section id="kegiatan" class="bg-white">
+    <div class="container">
+      <h2 class="section-title">Kegiatan Laboratorium</h2>
+      <div class="row g-4">
+        <div class="col-md-3">
+          <div class="card p-3 text-center">
+            <i class="bi bi-book fs-1 mb-3" style="color: var(--pink-dark);"></i>
+            <h5 class="card-title">Praktikum</h5>
+            <p class="card-text">Praktikum rutin mahasiswa Fisika, Fisika Medik, dan peminatan Optik</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card p-3 text-center">
+            <i class="bi bi-search fs-1 mb-3" style="color: var(--pink-dark);"></i>
+            <h5 class="card-title">Penelitian</h5>
+            <p class="card-text">Penelitian dosen dan mahasiswa (skripsi, tesis, dan proyek riset)</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card p-3 text-center">
+            <i class="bi bi-shield-check fs-1 mb-3" style="color: var(--pink-dark);"></i>
+            <h5 class="card-title">Pelatihan</h5>
+            <p class="card-text">Pelatihan proteksi radiasi dan dosimetri</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card p-3 text-center">
+            <i class="bi bi-people fs-1 mb-3" style="color: var(--pink-dark);"></i>
+            <h5 class="card-title">Kolaborasi</h5>
+            <p class="card-text">Kerja sama dengan rumah sakit, laboratorium kesehatan, serta instansi pemerintah</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tujuan Section -->
+  <section id="tujuan">
+    <div class="container">
+      <h2 class="section-title">Tujuan Laboratorium</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="card p-4">
+            <ul class="mb-0">
+              <li class="mb-2">Meningkatkan pemahaman mahasiswa terhadap aplikasi fisika dalam dunia medis dan analisis material</li>
+              <li class="mb-2">Menghasilkan riset berkualitas yang bermanfaat bagi perkembangan ilmu pengetahuan</li>
+              <li class="mb-2">Menyediakan layanan ilmiah bagi masyarakat akademik dan profesional</li>
+              <li class="mb-0">Mendorong penguatan kompetensi tenaga muda di bidang kesehatan dan teknologi radiasi</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lokasi Section -->
+  <section id="lokasi" class="bg-white">
+    <div class="container">
+      <h2 class="section-title">Lokasi Laboratorium</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="map-container">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3973.7267934084856!2d119.49124831476945!3d-5.135462096374295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbee329d96c4f93%3A0x3030bfbcaf770b0!2sDepartemen%20Fisika%20FMIPA%20Universitas%20Hasanuddin!5e0!3m2!1sid!2sid!4v1234567890123!5m2!1sid!2sid" 
+              width="100%" 
+              height="450" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+          <div class="text-center mt-3">
+            <p><i class="bi bi-geo-alt-fill" style="color: var(--pink-dark);"></i> <strong>Departemen Fisika FMIPA Universitas Hasanuddin</strong></p>
+            <p>Jl. Perintis Kemerdekaan KM.10, Tamalanrea, Makassar, Sulawesi Selatan</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    © 2025 Laboratorium Fisika Medik & Spektroskopi - Universitas Hasanuddin
+    <p class="mb-0">© 2025 Laboratorium Fisika Medik & Spektroskopi - Universitas Hasanuddin</p>
   </footer>
 
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
   <script>
-    document.getElementById("contactForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-      alert("Terima kasih! Pesan Anda telah terkirim.");
-      this.reset();
+    // Smooth scroll for navbar links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+          // Close mobile menu if open
+          const navbarCollapse = document.querySelector('.navbar-collapse');
+          if (navbarCollapse.classList.contains('show')) {
+            bootstrap.Collapse.getInstance(navbarCollapse).hide();
+          }
+        }
+      });
     });
   </script>
 </body>
