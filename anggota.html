@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anggota - Laboratorium Fisika Medik & Spektroskopi</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --pink: #f8c6d9;
+      --pink-dark: #c25a84;
+      --pink-light: #ffe6ef;
+      --text-dark: #333;
+    }
+
+    * {
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--pink-light);
+      color: var(--text-dark);
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: var(--pink-dark) !important;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: white !important;
+    }
+
+    .nav-link {
+      color: white !important;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .nav-link:hover {
+      color: var(--pink-light) !important;
+    }
+
+    /* Page Header */
+    .page-header {
+      background: linear-gradient(rgba(194,90,132,0.6), rgba(248,198,217,0.6));
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 8rem 2rem;
+      animation: fadeIn 1.2s ease;
+    }
+
+    .page-header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+    }
+
+    .page-header p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Anggota Cards */
+    .anggota-card {
+      background: white;
+      border-radius: 15px;
+      padding: 2rem;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      text-align: center;
+      height: 100%;
+    }
+
+    .anggota-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .anggota-card img {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      margin-bottom: 1.5rem;
+      border: 4px solid var(--pink);
+      transition: all 0.3s ease;
+    }
+
+    .anggota-card:hover img {
+      border-color: var(--pink-dark);
+      transform: scale(1.05);
+    }
+
+    .anggota-card h5 {
+      color: var(--pink-dark);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    .anggota-card .nim {
+      color: #666;
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .anggota-card .role {
+      background: var(--pink-light);
+      color: var(--pink-dark);
+      padding: 0.3rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: inline-block;
+      margin-top: 0.5rem;
+    }
+
+    /* Section */
+    section {
+      padding: 2rem 0 4rem;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--pink-dark);
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    .anggota-card {
+      animation: fadeIn 0.6s ease;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .page-header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+   <div id="navbar-container"></div>
+<script>
+  fetch("components/navbar.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("navbar-container").innerHTML = data;
+    });
+</script>
+   
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="container">
+      <h1><i class="bi bi-people-fill"></i> Anggota Laboratorium</h1>
+      <p>Tim Laboratorium Fisika Medik & Spektroskopi</p>
+    </div>
+  </div>
+
+  <!-- Anggota Section -->
+  <section>
+    <div class="container">
+      <!-- Kepala Laboratorium -->
+      <div class="mb-5">
+        <h3 class="text-center mb-4" style="color: var(--pink-dark);">Kepala Laboratorium</h3>
+        <div class="row justify-content-center">
+          <div class="col-md-4">
+            <div class="anggota-card">
+              <img src="https://via.placeholder.com/150" alt="Kepala Lab">
+              <h5>Lorem Ipsum</h5>
+              <p class="nim">NIP: 196505151990031002</p>
+              <span class="role">Kepala Laboratorium</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Anggota Tim -->
+      <div>
+        <h3 class="text-center mb-4" style="color: var(--pink-dark);">Anggota Tim</h3>
+        <div class="row g-4">
+          <div class="col-md-3">
+            <div class="anggota-card">
+              <img src="images/image1.png" alt="Anggota 1">
+              <h5>Tasyha Sri Desiana</h5>
+              <p class="nim">NIM: H021231049</p>
+              <span class="role">Anggota</span>
+            </div>
+          </div>
+          
+          <div class="col-md-3">
+            <div class="anggota-card">
+              <img src="https://via.placeholder.com/150" alt="Anggota 2">
+              <h5>Dea</h5>
+              <p class="nim">NIM: F011201002</p>
+              <span class="role">Asisten Peneliti</span>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="anggota-card">
+              <img src="https://via.placeholder.com/150" alt="Anggota 3">
+              <h5>Aris</h5>
+              <p class="nim">NIM: F011201003</p>
+              <span class="role">Asisten Peneliti</span>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="anggota-card">
+              <img src="https://via.placeholder.com/150" alt="Anggota 4">
+              <h5>Raizqullah</h5>
+              <p class="nim">NIM: F011201004</p>
+              <span class="role">Asisten Praktikum</span>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="anggota-card">
+              <img src="https://via.placeholder.com/150" alt="Anggota 5">
+              <h5>Serli</h5>
+              <p class="nim">NIM: F011201005</p>
+              <span class="role">Asisten Praktikum</span>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="anggota-card">
+              <img src="https://via.placeholder.com/150" alt="Anggota 6">
+              <h5> Idham</h5>
+              <p class="nim">NIM: F011201006</p>
+              <span class="role">Asisten Praktikum</span>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="anggota-card">
+              <img src="https://via.placeholder.com/150" alt="Anggota 7">
+              <h5>Fauzi</h5>
+              <p class="nim">NIM: F011201007</p>
+              <span class="role">Peneliti</span>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="anggota-card">
+              <img src="https://via.placeholder.com/150" alt="Anggota 8">
+              <h5>Siti</h5>
+              <p class="nim">NIM: F011201008</p>
+              <span class="role">Peneliti</span>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="anggota-card">
+              <img src="https://via.placeholder.com/150" alt="Anggota 9">
+              <h5>Ridwan</h5>
+              <p class="nim">NIM: F011201009</p>
+              <span class="role">Asisten Praktikum</span>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="anggota-card">
+              <img src="https://via.placeholder.com/150" alt="Anggota 10">
+              <h5>Lestari</h5>
+              <p class="nim">NIM: F011201010</p>
+              <span class="role">Asisten Peneliti</span>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="anggota-card">
+              <img src="https://via.placeholder.com/150" alt="Anggota 11">
+              <h5>Maulana</h5>
+              <p class="nim">NIM: F011201011</p>
+              <span class="role">Peneliti</span>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="anggota-card">
+              <img src="https://via.placeholder.com/150" alt="Anggota 12">
+              <h5>Fadilah</h5>
+              <p class="nim">NIM: F011201012</p>
+              <span class="role">Asisten Praktikum</span>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="anggota-card">
+              <img src="https://via.placeholder.com/150" alt="Anggota 13">
+              <h5>Pratama</h5>
+              <p class="nim">NIM: F011201013</p>
+              <span class="role">Asisten Peneliti</span>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="anggota-card">
+              <img src="https://via.placeholder.com/150" alt="Anggota 14">
+              <h5>Jariyah</h5>
+              <p class="nim">NIM: F011201014</p>
+              <span class="role">Peneliti</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p class="mb-0">© 2025 Laboratorium Fisika Medik & Spektroskopi - Universitas Hasanuddin</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
