@@ -79,7 +79,7 @@
       position: relative;
       overflow: hidden;
       border-radius: 15px;
-      cursor: pointer;
+      cursor: default;
       box-shadow: 0 3px 10px rgba(0,0,0,0.1);
       transition: all 0.3s ease;
       margin-bottom: 1.5rem;
@@ -247,20 +247,11 @@
   <!-- Gallery Section -->
   <section>
     <div class="container">
-      <!-- Filter Buttons -->
-      <div class="filter-buttons">
-        <button class="filter-btn active" data-filter="all">Semua</button>
-        <button class="filter-btn" data-filter="praktikum">Praktikum</button>
-        <button class="filter-btn" data-filter="penelitian">Penelitian</button>
-        <button class="filter-btn" data-filter="pelatihan">Pelatihan</button>
-        <button class="filter-btn" data-filter="fasilitas">Fasilitas</button>
-      </div>
-
       <!-- Gallery Grid -->
       <div class="row" id="galleryGrid">
-        <!-- Praktikum -->
-        <div class="col-md-4 gallery-column" data-category="praktikum">
-          <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="images/image.png">
+        <!-- Foto 1 -->
+        <div class="col-md-4 gallery-column">
+          <div class="gallery-item">
             <img src="images/image.png" alt="Praktikum 1">
             <div class="gallery-overlay">
               <h5>Praktikum Spektroskopi</h5>
@@ -270,8 +261,8 @@
         </div>
 
         <div class="col-md-4 gallery-column" data-category="praktikum">
-          <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="https://images.unsplash.com/photo-1581092795360-fd1ca03d7d5b?auto=format&fit=crop&w=800&q=80">
-            <img src="https://images.unsplash.com/photo-1581092795360-fd1ca03d7d5b?auto=format&fit=crop&w=800&q=80" alt="Praktikum 2">
+          <div class="gallery-item">
+            <img src="images/image1.png" alt="Praktikum 2">
             <div class="gallery-overlay">
               <h5>Praktikum Radiologi</h5>
               <p>Pengukuran dosis radiasi</p>
@@ -280,8 +271,8 @@
         </div>
 
         <div class="col-md-4 gallery-column" data-category="praktikum">
-          <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="https://images.unsplash.com/photo-1581091215360-59ab6b6b26a1?auto=format&fit=crop&w=800&q=80">
-            <img src="https://images.unsplash.com/photo-1581091215360-59ab6b6b26a1?auto=format&fit=crop&w=800&q=80" alt="Praktikum 3">
+          <div class="gallery-item">
+            <img src="images/WhatsApp Image 2025-11-21 at 00.25.46.jpeg" alt="Praktikum 3">
             <div class="gallery-overlay">
               <h5>Praktikum Dosimetri</h5>
               <p>Kalibrasi alat ukur radiasi</p>
@@ -291,8 +282,8 @@
 
         <!-- Penelitian -->
         <div class="col-md-4 gallery-column" data-category="penelitian">
-          <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=800&q=80">
-            <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=800&q=80" alt="Penelitian 1">
+          <div class="gallery-item">
+            <img src="images/WhatsApp Image 2025-11-21 at 19.17.10.jpeg" alt="Penelitian 1">
             <div class="gallery-overlay">
               <h5>Penelitian Material</h5>
               <p>Analisis spektroskopi FTIR</p>
@@ -301,8 +292,8 @@
         </div>
 
         <div class="col-md-4 gallery-column" data-category="penelitian">
-          <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=800&q=80">
-            <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=800&q=80" alt="Penelitian 2">
+          <div class="gallery-item">
+            <img src="images/WhatsApp Image 2025-11-21 at 19.17.11.jpeg" alt="Penelitian 2">
             <div class="gallery-overlay">
               <h5>Riset Biomolekul</h5>
               <p>Pengujian sampel biologis</p>
@@ -311,8 +302,8 @@
         </div>
 
         <div class="col-md-4 gallery-column" data-category="penelitian">
-          <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="https://images.unsplash.com/photo-1582719471137-c3967ffb1c42?auto=format&fit=crop&w=800&q=80">
-            <img src="https://images.unsplash.com/photo-1582719471137-c3967ffb1c42?auto=format&fit=crop&w=800&q=80" alt="Penelitian 3">
+          <div class="gallery-item">
+            <img src="images/WhatsApp Image 2025-11-21 at 19.18.15.jpeg" alt="Penelitian 3">
             <div class="gallery-overlay">
               <h5>Analisis Data</h5>
               <p>Pengolahan data spektrum</p>
@@ -322,8 +313,8 @@
 
         <!-- Pelatihan -->
         <div class="col-md-4 gallery-column" data-category="pelatihan">
-          <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80">
-            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80" alt="Pelatihan 1">
+          <div class="gallery-item">
+            <img src="images/WhatsApp Image 2025-11-21 at 19.18.16 (1).jpeg" alt="Pelatihan 1">
             <div class="gallery-overlay">
               <h5>Pelatihan Proteksi Radiasi</h5>
               <p>Workshop keselamatan radiasi</p>
@@ -332,8 +323,8 @@
         </div>
 
         <div class="col-md-4 gallery-column" data-category="pelatihan">
-          <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80">
-            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80" alt="Pelatihan 2">
+          <div class="gallery-item">
+            <img src="images/WhatsApp Image 2025-11-21 at 19.18.16.jpeg" alt="Pelatihan 2">
             <div class="gallery-overlay">
               <h5>Seminar Nasional</h5>
               <p>Seminar Fisika Medik 2024</p>
@@ -342,8 +333,8 @@
         </div>
 
         <div class="col-md-4 gallery-column" data-category="pelatihan">
-          <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80">
-            <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80" alt="Pelatihan 3">
+          <div class="gallery-item">
+            <img src="images/WhatsApp Image 2025-11-21 at 19.18.17.jpeg" alt="Pelatihan 3">
             <div class="gallery-overlay">
               <h5>Workshop MATLAB</h5>
               <p>Pelatihan analisis data</p>
@@ -353,7 +344,7 @@
 
         <!-- Fasilitas -->
         <div class="col-md-4 gallery-column" data-category="fasilitas">
-          <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=800&q=80">
+          <div class="gallery-item">
             <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=800&q=80" alt="Fasilitas 1">
             <div class="gallery-overlay">
               <h5>Spektrofotometer UV-Vis</h5>
@@ -363,7 +354,7 @@
         </div>
 
         <div class="col-md-4 gallery-column" data-category="fasilitas">
-          <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="https://images.unsplash.com/photo-1602080873537-028b06cc38f0?auto=format&fit=crop&w=800&q=80">
+          <div class="gallery-item">
             <img src="https://images.unsplash.com/photo-1602080873537-028b06cc38f0?auto=format&fit=crop&w=800&q=80" alt="Fasilitas 2">
             <div class="gallery-overlay">
               <h5>Ruang Laboratorium</h5>
@@ -373,7 +364,7 @@
         </div>
 
         <div class="col-md-4 gallery-column" data-category="fasilitas">
-          <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?auto=format&fit=crop&w=800&q=80">
+          <div class="gallery-item">
             <img src="https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?auto=format&fit=crop&w=800&q=80" alt="Fasilitas 3">
             <div class="gallery-overlay">
               <h5>Peralatan Dosimetri</h5>
@@ -433,15 +424,6 @@
           }
         });
       });
-    });
-
-    // Modal image display
-    const imageModal = document.getElementById('imageModal');
-    imageModal.addEventListener('show.bs.modal', function (event) {
-      const button = event.relatedTarget;
-      const imageUrl = button.getAttribute('data-image');
-      const modalImage = document.getElementById('modalImage');
-      modalImage.src = imageUrl;
     });
   </script>
 </body>

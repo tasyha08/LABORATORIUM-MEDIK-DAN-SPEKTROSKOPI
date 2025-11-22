@@ -10,3 +10,4 @@
    - Logo Universitas Hasanuddin (Unhas) telah ditambahkan pada bagian navbar website.
    - Logo ini terletak di bagian kiri navbar untuk memperjelas identitas dan afiliasi website dengan Unhas.
    - Navbar kini menggunakan desain responsif agar logo tetap terjaga posisinya di berbagai ukuran layar.
+   - Memperbaiiki logo unhas yang tidak ke load dan style page header
