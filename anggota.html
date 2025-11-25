@@ -103,6 +103,61 @@
       margin: 0;
     }
 
+    /* Dosen Cards */
+    .anggota-card-dosen {
+      background: white;
+      border-radius: 15px;
+      padding: 2rem;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      text-align: center;
+      height: 100%;
+    }
+
+    .anggota-card-dosen:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .anggota-card-dosen img {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      margin-bottom: 1.5rem;
+      border: 4px solid var(--pink);
+      transition: all 0.3s ease;
+    }
+
+    .anggota-card-dosen:hover img {
+      border-color: var(--pink-dark);
+      transform: scale(1.05);
+    }
+
+    .anggota-card-dosen h5 {
+      color: var(--pink-dark);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    .anggota-card-dosen .nip {
+      color: #666;
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .anggota-card-dosen .position {
+      background: var(--pink-light);
+      color: var(--pink-dark);
+      padding: 0.3rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: inline-block;
+      margin-top: 0.5rem;
+    }
+
     /* Special Card - Clickable */
     .anggota-card-special {
       cursor: pointer;
@@ -235,6 +290,7 @@
   </div>
 </nav>
 
+
   <!-- Page Header -->
   <div class="page-header">
     <div class="container">
@@ -246,215 +302,185 @@
   <!-- Anggota Section -->
   <section>
     <div class="container">
-      <div class="row g-4">
-        <!-- 1 -->
+      <!-- Kepala Laboratorium -->
+      <div class="mb-5">
+        <h3 class="text-center mb-4" style="color: var(--pink-dark);">Kepala Laboratorium</h3>
+        <div class="row justify-content-center">
+          <div class="col-md-4">
+            <div class="anggota-card-dosen">
+              <img src="images/Galeri Dosen/Prof Syamsir.jpg" alt="Kepala Lab">
+              <h5>Prof. Dr. Syamsir Dewang, M.Sci</h5>
+              <p class="position">Kepala Laboratorium</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dosen Laboratorium -->
+      <div class="mb-5">
+        <h3 class="text-center mb-4" style="color: var(--pink-dark);">Dosen Laboratorium</h3>
+        <div class="row g-4 justify-content-center">
+          <div class="col-md-3">
+            <div class="anggota-card-dosen">
+              <img src="images/Galeri Dosen/Sri Dewi Astuty.jpg" alt="Dosen 1">
+              <h5>Sri Dewi Astuty S.Si., M.Si., F.Med</h5>
+              <p class="position">Dosen</p>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="anggota-card-dosen">
+              <img src="https://i0.wp.com/digitalhealthskills.com/wp-content/uploads/2022/11/3da39-no-user-image-icon-27.png?fit=500%2C500&ssl=1" alt="Dosen 2">
+              <h5>⁠Ayu Hardianti Pratiwi S.Pd., M.Si</h5>
+              <p class="position">Dosen</p>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="anggota-card-dosen">
+              <img src="https://digitalhealthskills.com/wp-content/uploads/2022/11/3da39-no-user-image-icon-27.png" alt="Dosen 3">
+              <h5>Ajeng Anggreany Ibrahim S.Pd., M.Si</h5>
+              <p class="position">Dosen</p>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="anggota-card-dosen">
+              <img src="https://digitalhealthskills.com/wp-content/uploads/2022/11/3da39-no-user-image-icon-27.png" alt="Dosen 4">
+              <h5>Arfinna S.Si., M.Si., F.Med</h5>
+              <p class="position">Dosen</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Anggota Tim -->
+      <div>
+        <h3 class="text-center mb-4" style="color: var(--pink-dark);">Anggota Tim</h3>
+        <div class="row g-4">
+        <!-- Anggota 1 -->
         <div class="col-md-3">
           <div class="anggota-card">
             <h5>DEA AULIA MASIKU</h5>
-            <p class="nim">NIM: H021231002</p>
+            <p class="nim">H021231002</p>
           </div>
         </div>
 
-        <!-- 2 -->
+        <!-- Anggota 2 -->
         <div class="col-md-3">
           <div class="anggota-card">
             <h5>FAJRIANA ARIS</h5>
-            <p class="nim">NIM: H021231014</p>
+            <p class="nim">H021231014</p>
           </div>
         </div>
 
-        <!-- 3 -->
+        <!-- Anggota 3 -->
         <div class="col-md-3">
           <div class="anggota-card">
             <h5>ICHA NURANDHINI</h5>
-            <p class="nim">NIM: H021231021</p>
+            <p class="nim">H021231021</p>
           </div>
         </div>
 
-        <!-- 4 -->
+        <!-- Anggota 4 -->
         <div class="col-md-3">
           <div class="anggota-card">
             <h5>ALGIZA IDAM</h5>
-            <p class="nim">NIM: H021231028</p>
+            <p class="nim">H021231028</p>
           </div>
         </div>
 
-        <!-- 5 -->
+        <!-- Anggota 5 -->
         <div class="col-md-3">
           <div class="anggota-card">
             <h5>SERLI</h5>
-            <p class="nim">NIM: H021231032</p>
+            <p class="nim">H021231032</p>
           </div>
         </div>
 
-        <!-- 6 -->
+        <!-- Anggota 6 -->
         <div class="col-md-3">
           <div class="anggota-card">
             <h5>WIRNI AULIA RAMADHANI</h5>
-            <p class="nim">NIM: H021231040</p>
+            <p class="nim">H021231040</p>
           </div>
         </div>
 
-        <!-- 7 -->
+        <!-- Anggota 7 -->
         <div class="col-md-3">
           <div class="anggota-card">
             <h5>NURFAIKA</h5>
-            <p class="nim">NIM: H021231048</p>
+            <p class="nim">H021231048</p>
           </div>
         </div>
 
-        <!-- 8 - Tasyha (special clickable to open modal) -->
+        <!-- Anggota 8 -->
         <div class="col-md-3">
-          <div class="anggota-card anggota-card-special" data-bs-toggle="modal" data-bs-target="#detailModal">
+          <div class="anggota-card">
             <h5>TASYHA SRI DESIANA</h5>
-            <p class="nim">NIM: H021231049</p>
+            <p class="nim">H021231049</p>
           </div>
         </div>
 
-        <!-- 9 -->
+        <!-- Anggota 9 -->
         <div class="col-md-3">
           <div class="anggota-card">
             <h5>KASYFIL AZIZ</h5>
-            <p class="nim">NIM: H021231058</p>
+            <p class="nim">H021231058</p>
           </div>
         </div>
 
-        <!-- 10 -->
+        <!-- Anggota 10 -->
         <div class="col-md-3">
           <div class="anggota-card">
             <h5>SUCI RAHMAYADA</h5>
-            <p class="nim">NIM: H021231059</p>
+            <p class="nim">H021231059</p>
           </div>
         </div>
 
-        <!-- 11 -->
+        <!-- Anggota 11 -->
         <div class="col-md-3">
           <div class="anggota-card">
             <h5>ARMITHA ANAS</h5>
-            <p class="nim">NIM: H021231060</p>
+            <p class="nim">H021231060</p>
           </div>
         </div>
 
-        <!-- 12 -->
+        <!-- Anggota 12 -->
         <div class="col-md-3">
           <div class="anggota-card">
             <h5>MOH. ARYANSYAH RIZQULLAH DAENUNU</h5>
-            <p class="nim">NIM: H021231062</p>
+            <p class="nim">H021231062</p>
           </div>
         </div>
 
-        <!-- 13 -->
+        <!-- Anggota 13 -->
         <div class="col-md-3">
           <div class="anggota-card">
             <h5>ILMA FADHILAH</h5>
-            <p class="nim">NIM: H021231064</p>
+            <p class="nim">H021231064</p>
           </div>
         </div>
 
-        <!-- 14 -->
+        <!-- Anggota 14 -->
         <div class="col-md-3">
           <div class="anggota-card">
             <h5>EKA ADELIA PUTRI SARIMAN</h5>
-            <p class="nim">NIM: H021231065</p>
+            <p class="nim">H021231065</p>
           </div>
         </div>
 
-        <!-- 15 -->
+        <!-- Anggota 15 -->
         <div class="col-md-3">
           <div class="anggota-card">
             <h5>AQASYA CLAUDIA ZAHNITA</h5>
-            <p class="nim">NIM: H021231068</p>
+            <p class="nim">H021231068</p>
           </div>
         </div>
+              </div>
       </div>
     </div>
-  </section>
-
-  <!-- Detail Modal -->
-  <div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="detailModalLabel">
-            <i class="bi bi-person-badge"></i> Informasi Detail
-          </h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <h4 class="text-center mb-4" style="color: var(--pink-dark); font-weight: 700;">TASYHA SRI DESIANA</h4>
-          
-          <div class="info-item">
-            <i class="bi bi-card-text"></i>
-            <div class="info-content">
-              <div class="info-label">NIM</div>
-              <div class="info-value">H021231049</div>
-            </div>
-          </div>
-
-          <div class="info-item">
-            <i class="bi bi-envelope-fill"></i>
-            <div class="info-content">
-              <div class="info-label">Email</div>
-              <div class="info-value">
-                <a href="mailto:tasyhasridesiana12@gmail.com">tasyhasridesiana12@gmail.com</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="info-item">
-            <i class="bi bi-telephone-fill"></i>
-            <div class="info-content">
-              <div class="info-label">Telepon</div>
-              <div class="info-value">
-                <a href="tel:+6281234567890">+62 812-3456-7890</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="info-item">
-            <i class="bi bi-briefcase-fill"></i>
-            <div class="info-content">
-              <div class="info-label">Posisi</div>
-              <div class="info-value">Peneliti Laboratorium</div>
-            </div>
-          </div>
-
-          <div class="info-item">
-            <i class="bi bi-lightbulb-fill"></i>
-            <div class="info-content">
-              <div class="info-label">Fokus Penelitian</div>
-              <div class="info-value">
-                <ul class="mb-0">
-                  <li>Spektroskopi Material (UV-Vis, FTIR, Raman)</li>
-                  <li>Fisika Medik & Radiologi Diagnostik</li>
-                  <li>Analisis Biomolekul</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="info-item">
-            <i class="bi bi-journal-check"></i>
-            <div class="info-content">
-              <div class="info-label">Publikasi</div>
-              <div class="info-value">
-                <ul class="mb-0">
-                  <li>Karakterisasi Material dengan Spektroskopi FTIR (2024)</li>
-                  <li>Aplikasi Fisika Medik dalam Radiologi (2023)</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="text-center mt-4">
-            <a href="mailto:tasyhasridesiana12@gmail.com" class="btn btn-submit">
-              <i class="bi bi-envelope-fill me-2"></i>Kirim Email
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  </section>  
 
   <!-- Footer -->
   <footer>

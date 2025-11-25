@@ -74,20 +74,63 @@
       margin-bottom: 1.5rem;
     }
 
+    /* Custom Tabs */
+    .gallery-tabs {
+      margin: 3rem 0 2rem;
+      text-align: center;
+    }
+
+    .gallery-tabs .nav-tabs {
+      border: none;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .gallery-tabs .nav-link {
+      background: white;
+      color: var(--pink-dark) !important;
+      border: 2px solid var(--pink-dark);
+      padding: 0.8rem 2.5rem;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      margin: 0.5rem;
+    }
+
+    .gallery-tabs .nav-link:hover {
+      background: var(--pink-dark);
+      color: white !important;
+      border-color: var(--pink-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(194,90,132,0.3);
+    }
+
+    .gallery-tabs .nav-link.active {
+      background: var(--pink-dark);
+      color: white !important;
+      border-color: var(--pink-dark);
+      box-shadow: 0 5px 20px rgba(194,90,132,0.4);
+    }
+
+    .gallery-tabs .nav-link i {
+      color: inherit !important;
+    }
+
     /* Gallery Grid */
     .gallery-item {
       position: relative;
       overflow: hidden;
       border-radius: 15px;
-      cursor: default;
+      cursor: pointer;
       box-shadow: 0 3px 10px rgba(0,0,0,0.1);
       transition: all 0.3s ease;
       margin-bottom: 1.5rem;
+      background: white;
     }
 
     .gallery-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.2);
     }
 
     .gallery-item img {
@@ -101,47 +144,21 @@
       transform: scale(1.1);
     }
 
-    .gallery-overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: linear-gradient(to top, rgba(194,90,132,0.9), transparent);
-      padding: 1.5rem;
-      transform: translateY(100%);
-      transition: transform 0.3s ease;
-    }
-
-    .gallery-item:hover .gallery-overlay {
-      transform: translateY(0);
-    }
-
-    .gallery-overlay h5 {
-      color: white;
-      font-weight: 600;
-      margin-bottom: 0.3rem;
-      font-size: 1rem;
-    }
-
-    .gallery-overlay p {
-      color: white;
-      font-size: 0.85rem;
-      margin: 0;
-    }
-
     /* Modal */
     .modal-content {
-      background-color: transparent;
+      background-color: rgba(0,0,0,0.9);
       border: none;
     }
 
     .modal-body {
-      padding: 0;
+      padding: 1rem;
     }
 
     .modal-body img {
       width: 100%;
       border-radius: 10px;
+      max-height: 80vh;
+      object-fit: contain;
     }
 
     .modal-header {
@@ -153,28 +170,6 @@
       background-color: white;
       border-radius: 50%;
       opacity: 1;
-    }
-
-    /* Filter Buttons */
-    .filter-buttons {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    .filter-btn {
-      background: white;
-      color: var(--pink-dark);
-      border: 2px solid var(--pink-dark);
-      padding: 0.5rem 1.5rem;
-      border-radius: 25px;
-      margin: 0.3rem;
-      font-weight: 600;
-      transition: all 0.3s ease;
-    }
-
-    .filter-btn:hover, .filter-btn.active {
-      background: var(--pink-dark);
-      color: white;
     }
 
     /* Section */
@@ -210,31 +205,36 @@
       .gallery-item img {
         height: 250px;
       }
+
+      .gallery-tabs .nav-link {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>
 <body>
 
   <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-  <div class="container-fluid">
-    <a class="navbar-brand d-flex align-items-center" href="index.html">
-      <img src="images/Logo-Resmi-Unhas-1.png" alt="Logo UNHAS" height="40" class="me-2">
-      <span>Lab Fisika Medik & Spektroskopi</span>
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
-        <li class="nav-item"><a class="nav-link" href="anggota.html">Anggota</a></li>
-        <li class="nav-item"><a class="nav-link" href="galeri.html">Galeri</a></li>
-        <li class="nav-item"><a class="nav-link" href="kontak.html">Kontak</a></li>
-      </ul>
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="images/Logo-Resmi-Unhas-1.png" alt="Logo UNHAS" height="40" class="me-2">
+        <span>Lab Fisika Medik & Spektroskopi</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+          <li class="nav-item"><a class="nav-link" href="anggota.html">Anggota</a></li>
+          <li class="nav-item"><a class="nav-link" href="galeri.html">Galeri</a></li>
+          <li class="nav-item"><a class="nav-link" href="kontak.html">Kontak</a></li>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
   <!-- Page Header -->
   <div class="page-header">
@@ -244,131 +244,123 @@
     </div>
   </div>
 
-  <!-- Gallery Section -->
+  <!-- Gallery Section with Tabs -->
   <section>
     <div class="container">
-      <!-- Gallery Grid -->
-      <div class="row" id="galleryGrid">
-        <!-- Foto 1 -->
-        <div class="col-md-4 gallery-column">
-          <div class="gallery-item">
-            <img src="images/image.png" alt="Praktikum 1">
-            <div class="gallery-overlay">
-              <h5>Praktikum Spektroskopi</h5>
-              <p>Mahasiswa melakukan praktikum UV-Vis</p>
+      <!-- Tabs Navigation -->
+      <div class="gallery-tabs">
+        <ul class="nav nav-tabs" id="galleryTabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="penelitian-tab" data-bs-toggle="tab" data-bs-target="#penelitian" type="button" role="tab">
+              <i class="bi bi-clipboard-data me-2"></i>Galeri Penelitian
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="lab-tab" data-bs-toggle="tab" data-bs-target="#lab" type="button" role="tab">
+              <i class="bi bi-building me-2"></i>Galeri Lab
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="anggota-tab" data-bs-toggle="tab" data-bs-target="#anggota" type="button" role="tab">
+              <i class="bi bi-people me-2"></i>Galeri Anggota
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Tab Content -->
+      <div class="tab-content" id="galleryTabContent">
+        <!-- Galeri Penelitian -->
+        <div class="tab-pane fade show active" id="penelitian" role="tabpanel">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="images/Galeri Penelitian/WhatsApp Image 2025-11-25 at 19.24.13 (1).jpeg">
+                <img src="images/Galeri Penelitian/WhatsApp Image 2025-11-25 at 19.24.13 (1).jpeg" alt="Penelitian 1">
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="images/Galeri Penelitian/WhatsApp Image 2025-11-25 at 19.24.13.jpeg">
+                <img src="images/Galeri Penelitian/WhatsApp Image 2025-11-25 at 19.24.13.jpeg" alt="Penelitian 2">
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="images/Galeri Penelitian/WhatsApp Image 2025-11-25 at 19.24.14 (1).jpeg">
+                <img src="images/Galeri Penelitian/WhatsApp Image 2025-11-25 at 19.24.14 (1).jpeg" alt="Penelitian 3">
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="images/Galeri Penelitian/WhatsApp Image 2025-11-25 at 19.24.14.jpeg">
+                <img src="images/Galeri Penelitian/WhatsApp Image 2025-11-25 at 19.24.14.jpeg" alt="Penelitian 4">
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="images/Galeri Penelitian/WhatsApp Image 2025-11-25 at 19.24.15.jpeg">
+                <img src="images/Galeri Penelitian/WhatsApp Image 2025-11-25 at 19.24.15.jpeg" alt="Penelitian 5">
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="col-md-4 gallery-column" data-category="praktikum">
-          <div class="gallery-item">
-            <img src="images/image1.png" alt="Praktikum 2">
-            <div class="gallery-overlay">
-              <h5>Praktikum Radiologi</h5>
-              <p>Pengukuran dosis radiasi</p>
-            </div>
+        <!-- Galeri Lab -->
+        <div class="tab-pane fade" id="lab" role="tabpanel">
+          <div id="galeriLabGrid" class="row">
+            <!-- gallery rows will be rendered dynamically from images/Galeri Lab -->
           </div>
         </div>
 
-        <div class="col-md-4 gallery-column" data-category="praktikum">
-          <div class="gallery-item">
-            <img src="images/WhatsApp Image 2025-11-21 at 00.25.46.jpeg" alt="Praktikum 3">
-            <div class="gallery-overlay">
-              <h5>Praktikum Dosimetri</h5>
-              <p>Kalibrasi alat ukur radiasi</p>
+        <!-- Galeri Anggota -->
+        <div class="tab-pane fade" id="anggota" role="tabpanel">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="images/Galeri Anggota/WhatsApp Image 2025-11-21 at 00.25.34.jpeg">
+                <img loading="lazy" src="images/Galeri Anggota/WhatsApp Image 2025-11-21 at 00.25.34.jpeg" alt="Anggota 1">
+              </div>
             </div>
-          </div>
-        </div>
 
-        <!-- Penelitian -->
-        <div class="col-md-4 gallery-column" data-category="penelitian">
-          <div class="gallery-item">
-            <img src="images/WhatsApp Image 2025-11-21 at 19.17.10.jpeg" alt="Penelitian 1">
-            <div class="gallery-overlay">
-              <h5>Penelitian Material</h5>
-              <p>Analisis spektroskopi FTIR</p>
+            <div class="col-md-4">
+              <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="images/Galeri Anggota/WhatsApp Image 2025-11-21 at 00.25.35.jpeg">
+                <img loading="lazy" src="images/Galeri Anggota/WhatsApp Image 2025-11-21 at 00.25.35.jpeg" alt="Anggota 2">
+              </div>
             </div>
-          </div>
-        </div>
 
-        <div class="col-md-4 gallery-column" data-category="penelitian">
-          <div class="gallery-item">
-            <img src="images/WhatsApp Image 2025-11-21 at 19.17.11.jpeg" alt="Penelitian 2">
-            <div class="gallery-overlay">
-              <h5>Riset Biomolekul</h5>
-              <p>Pengujian sampel biologis</p>
+            <div class="col-md-4">
+              <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="images/Galeri Anggota/WhatsApp Image 2025-11-21 at 00.25.46.jpeg">
+                <img loading="lazy" src="images/Galeri Anggota/WhatsApp Image 2025-11-21 at 00.25.46.jpeg" alt="Anggota 3">
+              </div>
             </div>
-          </div>
-        </div>
 
-        <div class="col-md-4 gallery-column" data-category="penelitian">
-          <div class="gallery-item">
-            <img src="images/WhatsApp Image 2025-11-21 at 19.18.15.jpeg" alt="Penelitian 3">
-            <div class="gallery-overlay">
-              <h5>Analisis Data</h5>
-              <p>Pengolahan data spektrum</p>
+            <div class="col-md-4">
+              <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="images/Galeri Anggota/WhatsApp Image 2025-11-21 at 19.17.11.jpeg">
+                <img loading="lazy" src="images/Galeri Anggota/WhatsApp Image 2025-11-21 at 19.17.11.jpeg" alt="Anggota 4">
+              </div>
             </div>
-          </div>
-        </div>
 
-        <!-- Pelatihan -->
-        <div class="col-md-4 gallery-column" data-category="pelatihan">
-          <div class="gallery-item">
-            <img src="images/WhatsApp Image 2025-11-21 at 19.18.16 (1).jpeg" alt="Pelatihan 1">
-            <div class="gallery-overlay">
-              <h5>Pelatihan Proteksi Radiasi</h5>
-              <p>Workshop keselamatan radiasi</p>
+            <div class="col-md-4">
+              <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="images/Galeri Anggota/WhatsApp Image 2025-11-25 at 19.02.45.jpeg">
+                <img loading="lazy" src="images/Galeri Anggota/WhatsApp Image 2025-11-25 at 19.02.45.jpeg" alt="Anggota 5">
+              </div>
             </div>
-          </div>
-        </div>
 
-        <div class="col-md-4 gallery-column" data-category="pelatihan">
-          <div class="gallery-item">
-            <img src="images/WhatsApp Image 2025-11-21 at 19.18.16.jpeg" alt="Pelatihan 2">
-            <div class="gallery-overlay">
-              <h5>Seminar Nasional</h5>
-              <p>Seminar Fisika Medik 2024</p>
+            <div class="col-md-4">
+              <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="images/Galeri Anggota/WhatsApp Image 2025-11-25 at 19.03.08 (1).jpeg">
+                <img loading="lazy" src="images/Galeri Anggota/WhatsApp Image 2025-11-25 at 19.03.08 (1).jpeg" alt="Anggota 6">
+              </div>
             </div>
-          </div>
-        </div>
 
-        <div class="col-md-4 gallery-column" data-category="pelatihan">
-          <div class="gallery-item">
-            <img src="images/WhatsApp Image 2025-11-21 at 19.18.17.jpeg" alt="Pelatihan 3">
-            <div class="gallery-overlay">
-              <h5>Workshop MATLAB</h5>
-              <p>Pelatihan analisis data</p>
+            <div class="col-md-4">
+              <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="images/Galeri Anggota/WhatsApp Image 2025-11-25 at 19.03.08.jpeg">
+                <img loading="lazy" src="images/Galeri Anggota/WhatsApp Image 2025-11-25 at 19.03.08.jpeg" alt="Anggota 7">
+              </div>
             </div>
-          </div>
-        </div>
 
-        <!-- Fasilitas -->
-        <div class="col-md-4 gallery-column" data-category="fasilitas">
-          <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=800&q=80" alt="Fasilitas 1">
-            <div class="gallery-overlay">
-              <h5>Spektrofotometer UV-Vis</h5>
-              <p>Alat spektroskopi modern</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4 gallery-column" data-category="fasilitas">
-          <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1602080873537-028b06cc38f0?auto=format&fit=crop&w=800&q=80" alt="Fasilitas 2">
-            <div class="gallery-overlay">
-              <h5>Ruang Laboratorium</h5>
-              <p>Fasilitas praktikum lengkap</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4 gallery-column" data-category="fasilitas">
-          <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?auto=format&fit=crop&w=800&q=80" alt="Fasilitas 3">
-            <div class="gallery-overlay">
-              <h5>Peralatan Dosimetri</h5>
-              <p>Ion chamber dan dosimeter</p>
+            <div class="col-md-4">
+              <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="images/Galeri Anggota/WhatsApp Image 2025-11-25 at 19.03.12.jpeg">
+                <img loading="lazy" src="images/Galeri Anggota/WhatsApp Image 2025-11-25 at 19.03.12.jpeg" alt="Anggota 8">
+              </div>
             </div>
           </div>
         </div>
@@ -378,7 +370,7 @@
 
   <!-- Image Modal -->
   <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -399,29 +391,67 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   
   <script>
-    // Filter functionality
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const galleryColumns = document.querySelectorAll('.gallery-column');
+    // Render Galeri Lab dynamically and attach modal image handler
+    document.addEventListener('DOMContentLoaded', function () {
+      // 1) List semua nama file yang ada di folder 'images/Galeri Lab'
+      const galeriLabFiles = [
+        'WhatsApp Image 2025-11-21 at 19.18.15.jpeg',
+        'WhatsApp Image 2025-11-21 at 19.18.16 (1).jpeg',
+        'WhatsApp Image 2025-11-21 at 19.18.16.jpeg',
+        'WhatsApp Image 2025-11-25 at 19.03.05 (1).jpeg',
+        'WhatsApp Image 2025-11-25 at 19.03.05.jpeg',
+        'WhatsApp Image 2025-11-25 at 19.03.06 (1).jpeg',
+        'WhatsApp Image 2025-11-25 at 19.03.06.jpeg',
+        'WhatsApp Image 2025-11-25 at 19.03.07 (1).jpeg',
+        'WhatsApp Image 2025-11-25 at 19.03.07.jpeg',
+        'WhatsApp Image 2025-11-25 at 19.03.08.jpeg',
+        'WhatsApp Image 2025-11-25 at 19.03.09 (1).jpeg',
+        'WhatsApp Image 2025-11-25 at 19.03.09.jpeg',
+        'WhatsApp Image 2025-11-25 at 19.03.10 (1).jpeg',
+        'WhatsApp Image 2025-11-25 at 19.03.10 (2).jpeg',
+        'WhatsApp Image 2025-11-25 at 19.03.10.jpeg',
+        'WhatsApp Image 2025-11-25 at 19.03.11 (1).jpeg',
+        'WhatsApp Image 2025-11-25 at 19.03.11.jpeg',
+        'WhatsApp Image 2025-11-25 at 19.03.12 (1).jpeg',
+        'WhatsApp Image 2025-11-25 at 19.03.12.jpeg',
+        'WhatsApp Image 2025-11-25 at 19.03.13 (1).jpeg',
+        'WhatsApp Image 2025-11-25 at 19.03.13.jpeg',
+        'WhatsApp Image 2025-11-25 at 19.03.14 (1).jpeg',
+        'WhatsApp Image 2025-11-25 at 19.03.14.jpeg',
+        'WhatsApp Image 2025-11-25 at 19.03.15 (1).jpeg',
+        'WhatsApp Image 2025-11-25 at 19.03.15 (2).jpeg',
+        'WhatsApp Image 2025-11-25 at 19.03.15.jpeg',
+        'WhatsApp Image 2025-11-25 at 19.03.16 (1).jpeg',
+        'WhatsApp Image 2025-11-25 at 19.03.16.jpeg'
+      ];
 
-    filterButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        // Remove active class from all buttons
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        // Add active class to clicked button
-        button.classList.add('active');
+      // 2) Render grid from array
+      const grid = document.getElementById('galeriLabGrid');
+      grid.innerHTML = ''; // clear any placeholder content
 
-        const filterValue = button.getAttribute('data-filter');
+      galeriLabFiles.forEach((filename, index) => {
+        const col = document.createElement('div');
+        col.className = 'col-md-4';
 
-        galleryColumns.forEach(column => {
-          if (filterValue === 'all') {
-            column.style.display = 'block';
-          } else {
-            if (column.getAttribute('data-category') === filterValue) {
-              column.style.display = 'block';
-            } else {
-              column.style.display = 'none';
-            }
-          }
+        // build safe URL for filenames that contain spaces or special chars
+        const fileUrl = encodeURI('images/Galeri Lab/' + filename);
+
+        col.innerHTML = `
+          <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="${fileUrl}">
+            <img src="${fileUrl}" alt="Lab ${index + 1}">
+          </div>
+        `;
+
+        grid.appendChild(col);
+      });
+
+      // 3) Attach modal click handler to all gallery items (including dynamically added)
+      const modalImage = document.getElementById('modalImage');
+      const galleryItems = document.querySelectorAll('.gallery-item[data-img]');
+      galleryItems.forEach(item => {
+        item.addEventListener('click', function () {
+          const imgSrc = this.getAttribute('data-img');
+          modalImage.src = imgSrc;
         });
       });
     });
